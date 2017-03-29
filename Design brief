@@ -1,0 +1,23 @@
+- - - - - LINDEN - - - - - 
+- - - Garden Manager - - - 
+
+This manager is supposed to help gardeners to have the best crop yield on their parcel.
+This takes into account the species, the season, the treatments that are needed for the plants to be healthy.
+
+There will be an generic (abstract) class that will define a supertype Plant, then there will be the derived 
+classes Fruit, Vegetable, Herb and Legume. 
+In the first instance, we will consider that the derived classes will have only one pertinent type of treatment.
+This will be done by overriding the pure virtual function treatment from the class Plant.
+
+These classes will create plants that will have a _name_, a period when it is best to sow it _indoors_, one period
+when it is best to sow _outdoors_, and a period when it is best to _harvest_. 
+These periods will be managed with arrays of 12 boolean: if it is good to apply this property on this month, the 
+boolean variable will be equal to 1, 0 otherwise.
+The data about the plants will be stored in a XML file.
+
+The software will be developed in such a way that the gardener will be able to research information in two 
+different ways:
+
+- He/she can either look after data about one specific plant by specifying its name in the search engine,
+- Either look for a month and then there will be displayed all the plants on which something can be done during
+that month.
