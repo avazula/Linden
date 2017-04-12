@@ -1,0 +1,8 @@
+﻿  Fruit.cpp
+  Herb.cpp
+  Legume.cpp
+  main.cpp
+  Plant.cpp
+  Vegetable.cpp
+main.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl Plant::setType(class Plant &)" (?setType@Plant@@UEAAXAEAV1@@Z)
+C:\Users\Stitc\Linden\Linden\x64\Release\Linden.exe : fatal error LNK1120: 1 unresolved externals

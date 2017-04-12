@@ -12,12 +12,6 @@ private:
 
 	std::string name;
 
-	/*The following arrays of booleans give 
-	information about the period of sowing and harvesting.
-	If the value is 1, then the corresponding month is a 
-	good month to do the corresponding operation, but if it 
-	is 0, then this operation should be done during another month
-	to guarantee the best crop yields.*/
 	bool* indoors;
 	bool* outdoors;
 	bool* harvest;
@@ -45,7 +39,12 @@ public:
 	}
 
 	void display();
+	
+	virtual void setType(Plant& p);
 
+	//~Plant() {
+	//	delete indoors, outdoors, harvest;
+	//}
 };
 
 #endif PLANT_HPP_
