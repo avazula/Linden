@@ -1,16 +1,25 @@
+#ifndef PLANT_HPP_
+#define PLANT_HPP_
+
 #include <iostream>
-#include <stream>
+#include <string>
 
 class Plant {
 private:
-	string name;
-	bool indoors[12];
-	bool outdoors[12];
-	bool harvest[12];
+	std::string name;
+	bool* indoors;
+	bool* outdoors;
+	bool* harvest;
+	static const int nbMonths = 12;
 
-	Plant();
+	Plant(std::string n, bool in[nbMonths], bool out[12], bool harv[12]) : name(n) {
+		indoors = new bool[nbMonths];
+
+	}
 	~Plant();
 
 public:
 
 };
+
+#endif PLANT_HPP_

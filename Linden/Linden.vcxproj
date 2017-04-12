@@ -139,11 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Fruit.cpp" />
+    <ClCompile Include="Herb.cpp" />
+    <ClCompile Include="Legume.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Plant.cpp" />
+    <ClCompile Include="Vegetable.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Fruit.hpp" />
+    <ClInclude Include="Herb.hpp" />
+    <ClInclude Include="Legume.hpp" />
     <ClInclude Include="Plant.hpp" />
+    <ClInclude Include="Vegetable.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,4 @@
+#ifndef VEGETABLE_HPP_
+#define VEGETABLE_HPP_
+
+#endif VEGETABLE_HPP_
