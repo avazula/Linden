@@ -6,9 +6,9 @@ int main()
 {
 	cout << "Hello world!" << endl;
 
-	bool ind[12]	= { 0,0,0,1,1,1,0,1,0,0,1,0 };
-	bool outd[12]	= { 1,1,1,0,1,1,0,0,0,0,1,0 };
-	bool harvs[12]	= { 0,1,0,1,0,1,0,1,0,1,0,1 };
+	array<bool, 12> ind		= { 0,0,0,1,1,1,0,1,0,0,1,0 };
+	array<bool, 12> outd	= { 1,1,1,0,1,1,0,0,0,0,1,0 };
+	array<bool, 12> harvs	= { 0,1,0,1,0,1,0,1,0,1,0,1 };
 	string name = "Raspberry";
 	
 	Plant p1("Tree");
