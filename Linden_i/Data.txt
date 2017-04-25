@@ -1,2 +1,29 @@
-herb Basil 001111000000 000011100000 000001111100 0
+herb Basil 0,0,1,1,1,1,0,0,0,0,0,0 0,0,0,0,1,1,1,0,0,0,0,0 0,0,0,0,0,1,1,1,1,1,0,0 0
 herb Chives 001110000000 000111110000 000001111100 1
+
+#include "Fruit.hpp"
+#include "Herb.hpp"
+#include "Legume.hpp"
+#include "Vegetable.hpp"
+
+#include <ostream>
+#include <fstream>
+#include <sstream>
+
+class Inventory {
+	
+	void init() {
+
+		std::string myFile = "Bleble.txt";
+		std::ifstream infile(myFile.c_str(), std::ios::in);
+		infile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+
+		try {
+			infile.open(myFile);
+			while (!infile.eof()) infile.get();
+		}
+		catch (const std::ifstream::failure& e) {
+			std::cerr << "Error opening the file." << std::endl;
+		}
+	}
+};

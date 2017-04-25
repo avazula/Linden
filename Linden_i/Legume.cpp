@@ -29,7 +29,7 @@ void Legume::display() {
 
 }
 
-std::string Legume::getType()
+std::string Legume::getType(const Plant& p)
 {
 	return type;
 }

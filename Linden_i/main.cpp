@@ -1,5 +1,10 @@
 #include "Plant.hpp"
 #include "Fruit.hpp"
+#include "Herb.hpp"
+#include "Legume.hpp"
+#include "Vegetable.hpp"
+#include "GUIFactory.hpp"
+#include "Factory.hpp"
 #include <iostream>
 #include <sstream>
 #include <ostream>
@@ -26,30 +31,67 @@ int main()
 	p1.display();
 	p2.display();*/
 
-	string myFile = "Data.txt";
-	ifstream infile(myFile.c_str(), ios::in);
+	//string myFile = "Data.txt";
+	//ifstream infile(myFile.c_str(), ios::in);
 
-	if (infile) {
-		/*string line;*/
+	//if (infile) {
+	//	string line;
 
-		/*string type, name;
-		string ind;
-		vector<bool> test;
+	//	string type, name;
+	//	string ind, out, harv;
+	//	vector<bool> indoors, outdoors, harvest;
 
-		infile >> type >> name >> ind;
-		for (char& c : ind) {
+	//	infile >> type >> name >> ind >> out >> harv;
+	//	stringstream sind(ind), sout(out), sharv(harv);
 
-		}
-*/
-		/*while (getline(infile, line)) {
-			cout << line << endl;
-		}*/
+	//	bool b;
 
-		infile.close();
-	}
-	else {
-		cerr << "Opening of the file is impossible!" << endl;
-	}
+	//	while (sind >> b) {
+	//		indoors.push_back(b);
+	//		if (sind.peek() == ',') {
+	//			sind.ignore();
+	//		}
+	//	}
+
+	//	while (sout >> b) {
+	//		outdoors.push_back(b);
+	//		if (sout.peek() == ',') {
+	//			sout.ignore();
+	//		}
+	//	}
+
+	//	while (sharv >> b) {
+	//		harvest.push_back(b);
+	//		if (sharv.peek() == ',') {
+	//			sharv.ignore();
+	//		}
+	//	}
+
+	//	/*cout << "Size of indoors is: " << indoors.size() <<endl;
+	//	cout << indoors.at(4);*/
+
+	//	if (type == "herb") {
+	//		Herb h(name, indoors, outdoors, harvest);
+	//		h.display();
+	//	}
+
+
+	//	/*while (getline(infile, line)) {
+	//		cout << line << endl;
+	//	}*/
+
+	//	infile.close();
+	//}
+	//else {
+	//	cerr << "Opening of the file is impossible!" << endl;
+	//}
+
+	GUIFactory* guiFactory;
+	Plant* p;
+	guiFactory = new Factory;
+
+	p = guiFactory->createPlant("herb");
+	p->display();
 
 	system("PAUSE");
 

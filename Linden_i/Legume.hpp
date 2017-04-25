@@ -20,7 +20,7 @@ public:
 	void display();
 
 	//Pure virtual accessors declared in class Plant
-	std::string getType();
+	std::string getType(const Plant& p);
 
 	bool getMildew(const Legume& l);
 

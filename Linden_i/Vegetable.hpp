@@ -28,7 +28,7 @@ public:
 	void display();
 
 	//Pure virtual accessors declared in class Plant
-	std::string getType();
+	std::string getType(const Plant& p);
 
 	//Accessors specific to class Vegetable
 	float getDistance(const Vegetable& v);

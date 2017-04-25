@@ -45,6 +45,9 @@ void Vegetable::display() {
 	std::cout << " to suffer from powdery mildew." << std::endl;
 }
 
+std::string Vegetable::getType(const Plant& p) {
+	return type;
+}
 float Vegetable::getDistance(const Vegetable & v)
 {
 	return v.distance;

@@ -19,7 +19,7 @@ public:
 	//Overriding of the display function, as a Fruit has some more information to display than a Plant
 	void display();
 
-	std::string getType();
+	std::string getType(const Plant& p);
 
 	//Accessors specific to the Herb class
 	bool getPerrenial(const Herb& h);

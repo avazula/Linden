@@ -139,7 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Factory.hpp" />
     <ClInclude Include="Fruit.hpp" />
+    <ClInclude Include="GUIFactory.hpp" />
     <ClInclude Include="Herb.hpp" />
     <ClInclude Include="Legume.hpp" />
     <ClInclude Include="Plant.hpp" />

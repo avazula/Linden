@@ -1,3 +1,7 @@
-﻿  Vegetable.cpp
-  Linden_i.vcxproj -> c:\users\stitc\documents\visual studio 2017\Projects\Linden_i\Debug\Linden_i.exe
-  Linden_i.vcxproj -> c:\users\stitc\documents\visual studio 2017\Projects\Linden_i\Debug\Linden_i.pdb (Partial PDB)
+﻿  main.cpp
+  Vegetable.cpp
+  Legume.cpp
+  Generating Code...
+c:\users\stitc\documents\visual studio 2017\projects\linden_i\factory.hpp(12): warning C4715: 'Factory::createPlant': not all control paths return a value
+  Linden_i.vcxproj -> C:\Users\Stitc\documents\visual studio 2017\Projects\Linden_i\Debug\Linden_i.exe
+  Linden_i.vcxproj -> C:\Users\Stitc\documents\visual studio 2017\Projects\Linden_i\Debug\Linden_i.pdb (Partial PDB)

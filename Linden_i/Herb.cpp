@@ -18,23 +18,17 @@ void Herb::display() {
 	/*If the herb is indeed likely to be sowed indoors,
 	then display these months.*/
 	if (cond != 0) {
-		std::cout << name << " should rather be sowed indoors in ";
-		for (std::map<std::string, bool>::iterator it = indoors.begin(); it != indoors.end(); ++it) {
-			if ((*it).second == true) std::cout << (*it).first << " ";
-		}
+		std::cout << name << " should rather be sowed indoors in";
+		sortedDisplay(indoors);
 		std::cout << "." << std::endl;
 	}
 
-	std::cout << name << " is likely to be sowed outdoors in ";
-	for (std::map<std::string, bool>::iterator it = outdoors.begin(); it != outdoors.end(); ++it) {
-		if ((*it).second == true) std::cout << (*it).first << " ";
-	}
+	std::cout << name << " is likely to be sowed outdoors in";
+	sortedDisplay(outdoors);
 	std::cout << std::endl;
 
-	std::cout << "You should harvest " << name << " in ";
-	for (std::map<std::string, bool>::iterator it = harvest.begin(); it != harvest.end(); ++it) {
-		if ((*it).second) std::cout << (*it).first << " ";
-	}
+	std::cout << "You should harvest " << name << " in";
+	sortedDisplay(harvest);
 	std::cout << "." << std::endl;
 
 	if (perrenial == true) {
@@ -44,7 +38,7 @@ void Herb::display() {
 		std::cout << "The " << name << " is an annual plant." << std::endl;
 	}
 }
-std::string Herb::getType() {
+std::string Herb::getType(const Plant& p) {
 	return type;
 }
 
