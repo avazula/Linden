@@ -1,7 +1,15 @@
-﻿  main.cpp
-  Vegetable.cpp
+﻿  Vegetable.cpp
+  main.cpp
   Legume.cpp
+  Herb.cpp
+  Fruit.cpp
+  Factory.cpp
   Generating Code...
-c:\users\stitc\documents\visual studio 2017\projects\linden_i\factory.hpp(12): warning C4715: 'Factory::createPlant': not all control paths return a value
+  Compiling...
+  Plant.cpp
+  Generating Code...
+c:\users\stitc\documents\visual studio 2017\projects\linden_i\plant.cpp(27): warning C4715: 'Plant::isOkIndoors': not all control paths return a value
+c:\users\stitc\documents\visual studio 2017\projects\linden_i\plant.cpp(37): warning C4715: 'Plant::isOkOutdoors': not all control paths return a value
+c:\users\stitc\documents\visual studio 2017\projects\linden_i\plant.cpp(47): warning C4715: 'Plant::isOkHarvest': not all control paths return a value
   Linden_i.vcxproj -> C:\Users\Stitc\documents\visual studio 2017\Projects\Linden_i\Debug\Linden_i.exe
   Linden_i.vcxproj -> C:\Users\Stitc\documents\visual studio 2017\Projects\Linden_i\Debug\Linden_i.pdb (Partial PDB)

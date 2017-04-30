@@ -29,6 +29,8 @@ protected:
 	static std::vector<bool> Plant::getEmptyArray();
 	void sortedDisplay(std::map<std::string, bool> m);
 public:
+
+	typedef Plant* (__stdcall * CreatePlantFunc)(void);
 	//Constructor with default parameters. If not specified, the vectors will be initialized with the false value, and the name will be empty
 	Plant(std::string n = "", std::vector<bool> in = getEmptyArray(), std::vector<bool> out = getEmptyArray(), std::vector<bool> harv = getEmptyArray()) : name(n) {
 		//Initializing the vectors of sowing indoors, outdoors and harvesting
@@ -37,7 +39,6 @@ public:
 			outdoors.insert(std::pair<std::string, bool>(calendar[i], out[i]));
 			harvest.insert(std::pair<std::string, bool>(calendar[i], harv[i]));
 		}
-
 	}
 
 	/*The display method is pure virtual because we assume that there is

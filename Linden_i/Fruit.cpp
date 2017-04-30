@@ -2,6 +2,11 @@
 
 const std::string Fruit::type = "fruit";
 
+Plant * Fruit::Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, std::vector<bool> root, std::vector<bool> pru, bool m, bool pm)
+{
+	return new Fruit(n, in, out, harv, root, pru, m, pm);
+}
+
 void Fruit::display() {
 	std::cout << "Name of the plant: " << name << std::endl;
 	std::cout << "This plant is of type: " << type << std::endl;

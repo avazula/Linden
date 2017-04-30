@@ -1,15 +1,30 @@
-#ifndef FACTORY_HPP_
-#define FACTORY_HPP_
-
-class Factory : public GUIFactory {
-
-public:
-	Plant * createPlant(char* type) {
-		if (strcmp(type, "herb") == 0) return new Herb;
-		else if (strcmp(type, "fruit") == 0) return new Fruit;
-		else if (strcmp(type, "legume") == 0) return new Legume;
-		else if (strcmp(type, "vegetable") == 0) return new Vegetable;
-	}
-};
-
-#endif FACTORY_HPP_
+//#ifndef FACTORY_HPP_
+//#define FACTORY_HPP_
+//
+//#include <map>
+//#include <boost/any.hpp>
+//#include "Plant.hpp"
+//
+//class Factory {
+//private:
+//	Factory();
+//	Factory(const Factory& f);
+//	Factory& operator=(const Factory& f) { return *this; }
+//	
+//	typedef std::map<boost::any, boost::any> factoryMap;
+//	factoryMap m_factoryMap;
+//
+//public:
+//	~Factory() { m_factoryMap.clear(); }
+//
+//	static Factory * Get() {
+//		static Factory inst;
+//		return &inst;
+//	}
+//
+//	void Register(const std::string& plantName, Plant::CreatePlantFunc pfnCreate);
+//	Factory* CreatePlant(const std::string& plantName);
+//
+//};
+//
+//#endif FACTORY_HPP_

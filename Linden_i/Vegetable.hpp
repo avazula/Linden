@@ -24,6 +24,8 @@ public:
 		}
 	}
 
+	static Plant * __stdcall Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, std::vector<bool> thi, float d, bool m, bool pm);
+	
 	//Overriding of the display function, as a Fruit has some more information to display than a Plant
 	void display();
 

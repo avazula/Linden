@@ -2,6 +2,11 @@
 
 const std::string Herb::type = "herb";
 
+Plant * Herb::Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, bool m)
+{
+	return new Herb(n,in,out,harv,m);
+}
+
 void Herb::display() {
 
 	std::cout << "Name of the plant: " << name << std::endl;

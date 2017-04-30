@@ -16,6 +16,8 @@ private:
 public:
 	Herb(std::string n = "", std::vector<bool> in = getEmptyArray(), std::vector<bool> out = getEmptyArray(), std::vector<bool> harv = getEmptyArray(), bool p = false) : Plant(n, in, out, harv), perrenial(p) {}
 
+	static Plant * __stdcall Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, bool m);
+
 	//Overriding of the display function, as a Fruit has some more information to display than a Plant
 	void display();
 

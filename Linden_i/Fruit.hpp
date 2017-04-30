@@ -26,8 +26,9 @@ public:
 			rootStocking.insert(std::pair<std::string, bool>(calendar[i], r[i]));
 			pruning.insert(std::pair<std::string, bool>(calendar[i], p[i]));
 		}
-
 	}
+
+	static Plant * __stdcall Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, std::vector<bool> root, std::vector<bool> pru, bool m, bool pm);
 
 	void display();
 
