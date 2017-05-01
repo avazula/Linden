@@ -19,10 +19,7 @@ bool Plant::isOkIndoors(std::string s) {
 
 	std::map<std::string, bool>::iterator it;
 	it = indoors.find(s);
-
-	if (it == indoors.end()) {
-		std::cerr << "Bad writing of the month you are looking for. Please write the full name of the month and begin with an uppercase." << std::endl;
-	}
+	if (it == indoors.end()) return NULL;
 	else return (*it).second;
 }
 
@@ -30,9 +27,7 @@ bool Plant::isOkOutdoors(std::string s) {
 
 	std::map<std::string, bool>::iterator it;
 	it = outdoors.find(s);
-	if (it == outdoors.end()) {
-		std::cerr << "Bad writing of the month you are looking for. Please write the full name of the month and begin with an uppercase." << std::endl;
-	}
+	if (it == outdoors.end()) return NULL;
 	else return (*it).second;
 }
 
@@ -40,9 +35,7 @@ bool Plant::isOkHarvest(std::string s) {
 
 	std::map<std::string, bool>::iterator it;
 	it = harvest.find(s);
-	if (it == harvest.end()) {
-		std::cerr << "Bad writing of the month you are looking for. Please write the full name of the month and begin with an uppercase." << std::endl;
-	}
+	if (it == harvest.end()) return NULL;
 	else return (*it).second;
 }
 

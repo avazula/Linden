@@ -28,9 +28,10 @@ protected:
 	//function for initializing the vectors filled with false value for the default parameters of the constructor
 	static std::vector<bool> Plant::getEmptyArray();
 	void sortedDisplay(std::map<std::string, bool> m);
+
 public:
 
-	typedef Plant* (__stdcall * CreatePlantFunc)(void);
+	typedef Plant * (__stdcall * CreatePlantFunc)(void);
 	//Constructor with default parameters. If not specified, the vectors will be initialized with the false value, and the name will be empty
 	Plant(std::string n = "", std::vector<bool> in = getEmptyArray(), std::vector<bool> out = getEmptyArray(), std::vector<bool> harv = getEmptyArray()) : name(n) {
 		//Initializing the vectors of sowing indoors, outdoors and harvesting

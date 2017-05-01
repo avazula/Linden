@@ -81,6 +81,23 @@ void Fruit::display() {
 	std::cout << " to suffer from powdery mildew" << std::endl;
 }
 
+bool Fruit::isOkRootstocking(std::string s)
+{
+
+	std::map<std::string, bool>::iterator it;
+	it = rootStocking.find(s);
+	if (it == rootStocking.end()) return NULL;
+	else return (*it).second;
+}
+
+bool Fruit::isOkPruning(std::string s)
+{
+	std::map<std::string, bool>::iterator it;
+	it = pruning.find(s);
+	if (it == pruning.end()) return NULL;
+	else return (*it).second;
+}
+
 std::string Fruit::getType(const Plant& p) {
 	return type;
 }

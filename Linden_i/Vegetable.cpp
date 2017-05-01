@@ -3,9 +3,9 @@
 const std::string Vegetable::type = "vegetable";
 
 
-Plant * Vegetable::Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, std::vector<bool> thi, float d, bool m, bool pm)
+Plant * Vegetable::Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, float d, bool m, bool pm)
 {
-	return new Vegetable(n,in,out,harv,thi,d,m,pm);
+	return new Vegetable(n,in,out,harv,d,m,pm);
 }
 
 void Vegetable::display() {
@@ -22,10 +22,6 @@ void Vegetable::display() {
 
 	std::cout << "You should harvest " << name << " in";
 	sortedDisplay(harvest);
-	std::cout << std::endl;
-
-	std::cout << "You should thinning the ranges of " << name << " during";
-	sortedDisplay(thinning);
 	std::cout << std::endl;
 
 	std::cout << "After thinning, the " << name << " should respect a distance of " << distance << "cm between each other." << std::endl;
@@ -68,11 +64,6 @@ bool Vegetable::getPowderyMildew(const Vegetable & v)
 	return v.powderyMildew;
 }
 
-bool Vegetable::getThinning(std::map<std::string, bool>::iterator it)
-{
-	return (*it).second;
-}
-
 void Vegetable::setDistance(Vegetable & v, float d)
 {
 	v.distance = d;
@@ -86,9 +77,4 @@ void Vegetable::setMildew(Vegetable & v, bool m)
 void Vegetable::setPowderyMildew(Vegetable & v, bool pm)
 {
 	v.powderyMildew = pm;
-}
-
-void Vegetable::setThinning(std::string s, bool b)
-{
-	thinning[s] = b;
 }

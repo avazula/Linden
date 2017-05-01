@@ -32,6 +32,9 @@ public:
 
 	void display();
 
+	bool isOkRootstocking(std::string s);
+	bool isOkPruning(std::string s);
+
 	//Pure virtual accessors declared in class Plant
 	std::string getType(const Plant& p);
 

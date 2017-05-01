@@ -36,10 +36,10 @@ void Herb::display() {
 	sortedDisplay(harvest);
 	std::cout << "." << std::endl;
 
-	if (perrenial == true) {
+	if (perrenial == 1) {
 		std::cout << "The " << name << " is perrenial." << std::endl;
 	}
-	else {
+	else if (perrenial == 0) {
 		std::cout << "The " << name << " is an annual plant." << std::endl;
 	}
 }
