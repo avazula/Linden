@@ -3,6 +3,7 @@
 
 #include "Plant.hpp"
 
+//Derived class Fruit, based on abstract class Plant
 class Fruit : public Plant {
 
 private:
@@ -28,14 +29,18 @@ public:
 		}
 	}
 
+	//Method for creating new objects of the class (please refer to the Factory cpp files)
 	static Plant * __stdcall Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, std::vector<bool> root, std::vector<bool> pru, bool m, bool pm);
 
+	//Display method
 	void display();
 
+	//Assess if the selected month is good for rootstocking or pruning
 	bool isOkRootstocking(std::string s);
 	bool isOkPruning(std::string s);
 
 	//Pure virtual accessors declared in class Plant
+	//The parameter is a constant reference because we do not modify its value
 	std::string getType(const Plant& p);
 
 	//Accessors specific to the Fruit class

@@ -1,7 +1,9 @@
 #include "Herb.hpp"
 
+//Initializing the type of the derived plant
 const std::string Herb::type = "herb";
 
+//Method for creating new objects of the class (please refer to the Factory cpp files)
 Plant * Herb::Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, bool m)
 {
 	return new Herb(n,in,out,harv,m);
@@ -36,6 +38,7 @@ void Herb::display() {
 	sortedDisplay(harvest);
 	std::cout << "." << std::endl;
 
+	//Checks whether the plant is annual or perrenial.
 	if (perrenial == 1) {
 		std::cout << "The " << name << " is perrenial." << std::endl;
 	}
@@ -43,6 +46,8 @@ void Herb::display() {
 		std::cout << "The " << name << " is an annual plant." << std::endl;
 	}
 }
+
+//Accessors
 std::string Herb::getType(const Plant& p) {
 	return type;
 }
@@ -51,6 +56,7 @@ bool Herb::getPerrenial(const Herb& h) {
 	return perrenial;
 }
 
+//Mutators
 void Herb::setPerrenial(bool b) {
 	perrenial = b;
 }

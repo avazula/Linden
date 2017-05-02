@@ -3,6 +3,7 @@
 
 #include "Plant.hpp"
 
+//Legume class derived from abstract class Plant
 class Legume : public Plant {
 
 
@@ -10,21 +11,25 @@ private:
 
 	//Type of the plant
 	static const std::string type;
+	//Boolean saying if the legume is likely to suffer from mildew
 	bool mildew;
 
 public:
-	//Same constructor as for the Plant class, except for the treatments array, that we also need to initialize here
-	Legume(std::string n = '\0', std::vector<bool> in = getEmptyArray(), std::vector<bool> out = getEmptyArray(), std::vector<bool> harv = getEmptyArray(), bool m = false) : Plant(n, in, out, harv), mildew(m) {}
+	//Constructor
+	Legume(std::string n = " ", std::vector<bool> in = getEmptyArray(), std::vector<bool> out = getEmptyArray(), std::vector<bool> harv = getEmptyArray(), bool m = false) : Plant(n, in, out, harv), mildew(m) {}
+	//Method for creating new objects of the class (please refer to the Factory cpp files)
 	static Plant * __stdcall Create(std::string n, std::vector<bool> in, std::vector<bool> out, std::vector<bool> harv, bool m);
 
-	//Overriding of the display function, as a Fruit has some more information to display than a Plant
+	//display() function that was pure virtual in Plant class 
 	void display();
 
 	//Pure virtual accessors declared in class Plant
 	std::string getType(const Plant& p);
 
+	//Accessors
 	bool getMildew(const Legume& l);
 
+	//Mutators
 	void setMildew(Legume& l, bool m);
 };
 

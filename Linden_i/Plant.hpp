@@ -6,12 +6,13 @@
 #include <map>
 #include <vector>
 
+//Abstract class Plant.
 class Plant {
 
 protected:
 	//Constant attribute that indicates the size of the vectors associated with the months of the year
 	static const int nbMonths = 12;
-	//Array 
+	//Array of strings for initializing the keys of the maps
 	std::string calendar[nbMonths] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
 	//Name of the plant
@@ -25,16 +26,22 @@ protected:
 	std::map<std::string, bool> outdoors;
 	std::map<std::string, bool> harvest;
 
-	//function for initializing the vectors filled with false value for the default parameters of the constructor
+	//Function for initializing the vectors filled with false value for the default parameters of the constructor
 	static std::vector<bool> Plant::getEmptyArray();
+	/*This function modifies the default behaviour of maps for displaying. Normally the displaying is ordered regarding to
+	the complexity. sortedDisplay() allows the elements of the map to be displayed in the order in which they have been 
+	inserted.*/
 	void sortedDisplay(std::map<std::string, bool> m);
 
 public:
 
+	/*This function is a method for building new objects of the (derived) classes (because it is not
+	possible to create objects from an abstract class.
+	This method is used in the scope of the Factory design pattern (please see the related cpp files).*/
 	typedef Plant * (__stdcall * CreatePlantFunc)(void);
 	//Constructor with default parameters. If not specified, the vectors will be initialized with the false value, and the name will be empty
 	Plant(std::string n = "", std::vector<bool> in = getEmptyArray(), std::vector<bool> out = getEmptyArray(), std::vector<bool> harv = getEmptyArray()) : name(n) {
-		//Initializing the vectors of sowing indoors, outdoors and harvesting
+		//Initializing the maps of sowing indoors, outdoors and harvesting
 		for (int i = 0; i < nbMonths; i++) {
 			indoors.insert(std::pair<std::string, bool>(calendar[i], in[i]));
 			outdoors.insert(std::pair<std::string, bool>(calendar[i], out[i]));
@@ -57,7 +64,7 @@ public:
 	bool		getOutdoors(std::map <std::string, bool>::iterator it);
 	bool		getHarvest(std::map <std::string, bool>::iterator it);
 
-	/*This accessors has no meaning yet because the type of a plant is related to the child
+	/*This accessor has no meaning yet, because the type of a plant is related to the child
 	classes derived of this latter, hence the pure virtual declaration.*/
 	virtual std::string getType(const Plant& p) = 0;
 

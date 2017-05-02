@@ -1,5 +1,6 @@
 #include "Plant.hpp"
 
+//Function for initializing the vectors filled with false value for the default parameters of the constructor
 std::vector<bool> Plant::getEmptyArray() {
 
 	//Declaring and initializing a vector of booleans with false values for the default constructor
@@ -8,6 +9,9 @@ std::vector<bool> Plant::getEmptyArray() {
 	return vec;
 }
 
+/*This function modifies the default behaviour of maps for displaying. Normally the displaying is ordered regarding to
+the complexity. sortedDisplay() allows the elements of the map to be displayed in the order in which they have been
+inserted. It will be used for the display() methods in the derived classes.*/
 void Plant::sortedDisplay(std::map<std::string, bool> m) {
 	for (int i = 0; i < nbMonths; i++) {
 		if (m[calendar[i]] == true) std::cout << " " << calendar[i];
@@ -19,6 +23,7 @@ bool Plant::isOkIndoors(std::string s) {
 
 	std::map<std::string, bool>::iterator it;
 	it = indoors.find(s);
+	//If the entered string does not match any month defined in the calendar array of the Plant.hpp file
 	if (it == indoors.end()) return NULL;
 	else return (*it).second;
 }
@@ -45,10 +50,6 @@ std::string Plant::getName(const Plant& p) {
 }
 
 bool Plant::getIndoors(std::map <std::string, bool>::iterator it) {
-	//if (i > nbMonths-1) {
-	//	std::cerr << "Please choose an integer between 0 and 11" << std::endl;
-	//}
-	//std::map<std::string, bool>::iterator it = indoors.begin();
 	return it->second;
 }
 
