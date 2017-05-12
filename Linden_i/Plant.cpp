@@ -49,16 +49,16 @@ std::string Plant::getName(const Plant& p) {
 	return name;
 }
 
-bool Plant::getIndoors(std::map <std::string, bool>::iterator it) {
-	return it->second;
+bool Plant::getIndoors(std::string month) {
+	return indoors[month];
 }
 
-bool Plant::getOutdoors(std::map <std::string, bool>::iterator it) {
-	return it->second;
+bool Plant::getOutdoors(std::string month) {
+	return outdoors[month];
 }
 
-bool Plant::getHarvest(std::map <std::string, bool>::iterator it) {
-	return it->second;
+bool Plant::getHarvest(std::string month) {
+	return harvest[month];
 }
 
 //Mutators

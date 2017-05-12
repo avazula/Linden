@@ -60,9 +60,9 @@ public:
 
 	//Accessors
 	std::string getName(const Plant& p);
-	bool		getIndoors(std::map <std::string, bool>::iterator it);
-	bool		getOutdoors(std::map <std::string, bool>::iterator it);
-	bool		getHarvest(std::map <std::string, bool>::iterator it);
+	bool		getIndoors(std::string month);
+	bool		getOutdoors(std::string month);
+	bool		getHarvest(std::string month);
 
 	/*This accessor has no meaning yet, because the type of a plant is related to the child
 	classes derived of this latter, hence the pure virtual declaration.*/

@@ -35,8 +35,11 @@ int main()
 		cerr << "Exception " << e.what() << endl;
 	}
 
+	//String containing the name of the file to read
 	string myFile = "Data.txt";
+	//Opening under read-only configuration
 	ifstream infile(myFile.c_str(), ios::in);
+
 	//Vectors where the derived plants will be stored.
 	vector<Fruit> fruits;
 	vector<Herb> herbs;
@@ -134,13 +137,13 @@ int main()
 			//objects and that I would have been closed from the solution.
 
 			/*Plant * p;
-			//Declaration of the factory
+			Declaration of the factory
 			Factory * fc;
 			fc = new Factory;
-			//This calls the appropriate Create function depending on the type. As all parameters (that were loaded before) are given
-			//as parameters of the createPlant function, we can instantiate objects with relevant data for all its attributes.
+			This calls the appropriate Create function depending on the type. As all parameters (that were loaded before) are given
+			as parameters of the createPlant function, we can instantiate objects with relevant data for all its attributes.
 			p = fc->createPlant(type, name, indoors, outdoors, harvest, rootStocking, pruning, distance, mildew, powderyMildew, perrenial);
-			//Storing of a pointer to the created object into a map: they key is the name of the plant and the value is the pointer.
+			Storing of a pointer to the created object into a map: they key is the name of the plant and the value is the pointer.
 			plants.insert(std::pair<string, Plant*>(p->getName(*p), p));*/
 
 			//Creation of all objects depending on their type and storing them in the appropriate vectors
@@ -198,6 +201,16 @@ int main()
 	//Vector for checking if the month given by the user respects the defined syntax
 	vector<string> year = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 	
+	Vegetable t("Tomato");
+	t.display();
+	float dist;
+	cout << "Enter specific distance for " << t.getName(t) << ": " << endl;
+	cin >> dist;
+	t.setDistance(t, dist);
+	t.display();
+
+	cout << "The new set distance for " << t.getName(t) << " is: " << t.getDistance(t) << endl;
+
 	int choice;
 	while (1) {
 		cin >> choice;
@@ -241,6 +254,7 @@ int main()
 			//If sum is equal to 0 it means that the plant has not been found. 
 			if (sum == 0) cout << "The plant you are looking for does not exist in the program. Please try with another plant." << endl;
 			cout << "Please make a choice by entering a number between 1 and 6 or press 0 for exit." << endl;
+			cout << "Press 7 if you want to see the possibilities again." << endl;
 		}
 		//Data about all the plants that can be sowed indoors on a specific month
 		else if (choice == 2) {
@@ -257,7 +271,7 @@ int main()
 				int sum = 0;
 				for (vector<Fruit>::iterator it = fruits.begin(); it != fruits.end(); ++it) {
 
-					if (it->isOkIndoors(month)) {
+					if ((*it).getIndoors(month) == 1) {
 						cout << it->getName(*it) << " ";
 						sum++;
 					}
@@ -283,6 +297,8 @@ int main()
 				if (sum == 0) cout << "There is nothing you can sow indoors in " << month << endl;
 				else cout << "are the plants that you can sow indoors in " << month << endl;
 				cout << "Please make a choice by entering a number between 1 and 6 or press 0 for exit." << endl;
+				cout << "Press 7 if you want to see the possibilities again." << endl;
+
 			}
 		} //end choice 2: sowing indoors
 		  //Data about all the plants that can be sowed outdoors on a specific month
@@ -325,6 +341,8 @@ int main()
 				if (sum == 0) cout << "There is nothing you can sow outdoors in " << month << endl;
 				else cout << "are the plants that you can sow outdoors in " << month << endl;
 				cout << "Please make a choice by entering a number between 1 and 6 or press 0 for exit." << endl;
+				cout << "Press 7 if you want to see the possibilities again." << endl;
+
 			}
 		} //end choice 3: sowing outdoors
 		  //Data about all the plants that can be harvested on a specific month
@@ -368,6 +386,8 @@ int main()
 				if (sum == 0) cout << "There is nothing you can harvest in " << month << endl;
 				else cout << "are the plants that you can harvest in " << month << endl;
 				cout << "Please make a choice by entering a number between 1 and 6 or press 0 for exit." << endl;
+				cout << "Press 7 if you want to see the possibilities again." << endl;
+
 			}
 		} //end choice 4: harvesting
 		  //Data about all the plants for which you can do rootstocks on a specific month
@@ -389,8 +409,10 @@ int main()
 					}
 				}
 				if (sum == 0) cout << "There is nothing you can rootstock in " << month << endl;
-				else cout << "are the plants that you can harvest in " << month << endl;
+				else cout << "are the plants that you can rootstock in " << month << endl;
 				cout << "Please make a choice by entering a number between 1 and 6 or press 0 for exit." << endl;
+				cout << "Press 7 if you want to see the possibilities again." << endl;
+
 			}
 		} //end choice 5: rootstocking
 		  //Data about all the plants for which you can prune on a specific month
@@ -414,6 +436,8 @@ int main()
 				if (sum == 0) cout << "There is nothing you can prune in " << month << endl;
 				else cout << "are the plants that you can prune in " << month << endl;
 				cout << "Please make a choice by entering a number between 1 and 6 or press 0 for exit." << endl;
+				cout << "Press 7 if you want to see the possibilities again." << endl;
+
 			}
 		} //end choice 6: pruning
 		//Displaying of the "menu"
